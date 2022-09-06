@@ -1,9 +1,9 @@
 ---
 
-- name: Install packages
+- name: Remove packages
   hosts: all
   tasks:
-    - name: YUM | Install packages
+    - name: YUM | Remove packages
       yum: name={{ packages }} state=absent
       when: ansible_distribution == "CentOS" or ansible_distribution == "RedHat"
 ...
