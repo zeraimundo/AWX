@@ -3,7 +3,7 @@
 - name: Default Playbook - Starting Deploy
   hosts: all
 
-  tasts:
+  tasks:
     - name: Get ansible facts
       debug:
         var: ansible_facts
