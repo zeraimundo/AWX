@@ -14,6 +14,6 @@
       yum: 
         name: httpd
         state: latest
-      when: ansible_distribution == "CentOS" or ansible_distribution == "RedHat"
+      when: ansible_distribution == "CentOS" or ansible_distribution == "RedHat" or ansible_distribution == "Amazon"
       tags: centos
 ...
