@@ -1,2 +1,11 @@
-- name: Unconditionally shut down the machine with all defaults
-  community.general.shutdown:
+---
+- hosts: shutdown
+  gather_facts: no
+  tasks:
+    - name: shutdown
+      command: /sbin/shutdown -h now
+      sudo: yes
+
+    - name: wait go down
+      local_action: wait_for host={{ ansible_ssh_host }} port=22 state=stopped
+...
