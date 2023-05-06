@@ -1,0 +1,15 @@
+---
+
+- name: launching AWS instance using Ansible
+ec2:
+key_name: new_Frank
+instance_type: t2.micro
+image: ami-05331e0d9aa1b9f1c
+region: sa-east-2
+wait: yes
+group: Ansible
+count: 1
+vpc_subnet_id: default
+assign_public_ip: yes
+
+---
